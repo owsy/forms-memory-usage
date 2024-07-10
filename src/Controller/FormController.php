@@ -14,18 +14,23 @@ class FormController extends AbstractController
     {
         $preFormMemoryUsage = memory_get_peak_usage();
 
-        $this->createForm(RootType::class, [
+        $data = [
             'locations' => [
                 [
-                    'subLocations' => array_fill(0, 20, []),
+                    'subLocations' => array_fill(0, 20, [
+                        'buildings' => array_fill(0, 20, [])
+                    ]),
                 ],
             ],
-        ]);
+        ];
+
+        $form = $this->createForm(RootType::class, $data);
 
         $postFormMemoryUsage = memory_get_peak_usage();
 
         return $this->render('form/index.html.twig', [
-            'pre_form_memory_usage' => $preFormMemoryUsage,
+            'form' => $form,
+            'pre_form_memory_usage'  => $preFormMemoryUsage,
             'post_form_memory_usage' => $postFormMemoryUsage,
         ]);
     }

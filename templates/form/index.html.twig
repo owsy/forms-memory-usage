@@ -5,6 +5,10 @@
 {% block body %}
     <h1>Memory Usage</h1>
 
+    {# remove comment to render form #}
+    {#
+    {{ form(form }}
+    #}
     <p>Pre Form: {{ pre_form_memory_usage|number_format }} bytes.</p>
     <p>Post Form: {{ post_form_memory_usage|number_format }} bytes.</p>
 {% endblock %}
