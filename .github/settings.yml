@@ -2,7 +2,7 @@
 
 # See https://developer.github.com/v3/teams/#add-or-update-team-repository for available options
 teams:
-  - name: owsy/employees
+  - name: @owsy/employees
     permission: push
 
 repository:
