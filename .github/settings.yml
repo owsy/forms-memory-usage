@@ -1,0 +1,29 @@
+# https://github.com/probot/settings
+
+# See https://developer.github.com/v3/teams/#add-or-update-team-repository for available options
+teams:
+  - name: owsy/employees
+    permission: push
+
+repository:
+  allow_merge_commit: true
+  allow_rebase_merge: false
+  allow_squash_merge: false
+  default_branch: main
+  description: "Symfony forms memory usage demo"
+  has_downloads: false
+  has_issues: false
+  has_pages: false
+  has_projects: false
+  has_wiki: false
+  name: forms-memory-usage
+  private: false
+
+branches:
+  - name: main
+    protection:
+      enforce_admins: false
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+      required_status_checks: ~
+      restrictions: null
